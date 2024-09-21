@@ -21,7 +21,6 @@ const App = () => {
       <Link title={info} />
       <input placeholder="digite a operação" value={value} onChange={(event) => setValue(event.target.value)} />
       <h1>{data}</h1>
-      <i class="bx bx-home"></i>
       <button onClick={handleClick}>
           Calcular
       </button>
