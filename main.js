@@ -1,5 +1,6 @@
 const { app, BrowserWindow} = require('electron')
 const apc = require('./ipc');
+const path = require('path');
 
 apc.init();
 
@@ -13,11 +14,11 @@ function FormMain() {
       contextIsolation: false,
       webSecurity: false,
       devTools: true,
-      // preload: path.join(__dirname, 'preload.js'),
+      preload: path.join(__dirname, 'preload.js'),
       // zoomFactor: 0.68
     },
     autoHideMenuBar: true,
-    // icon: path.join(__dirname, '256x256.png'),
+    icon: path.join(__dirname, '256x256.png'),
   })
 
   mainWindow.loadFile('public/index.html');
