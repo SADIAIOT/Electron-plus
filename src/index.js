@@ -1,8 +1,8 @@
 const { ipcRenderer } = require('electron');
 
 const App = () => {
-  const [data, setData] = React.useState('0');
-  const [value, setValue] = React.useState('0');
+  const [data, setData] = React.useState(0);
+  const [value, setValue] = React.useState('');
   const [info, setInfo] = React.useState('Electron ++');
 
   const handleClick = (event) => {
@@ -19,7 +19,7 @@ const App = () => {
   return (
     <div>
       <Link title={info} />
-      <input placeholder="digite algo" value={value} onChange={(event) => setValue(event.target.value)} />
+      <input placeholder="digite a operação" value={value} onChange={(event) => setValue(event.target.value)} />
       <h1>{data}</h1>
       <button onClick={handleClick}>
           Calcular

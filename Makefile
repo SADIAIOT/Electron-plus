@@ -10,9 +10,3 @@ install:
 
 build:
 	npm run build
-
-git:
-	git add .
-	git status
-	git commit -m "commit"
-	git push -u origin HEAD

@@ -1,26 +1,51 @@
 {
-  "name": "androbridge",
+  "name": "Electron-plus",
   "version": "1.0.0",
-  "description": "mini sistema de gestao de stock",
+  "description": "Electron Plus é um framework inovador que visa facilitar o desenvolvimento de aplicativos desktop utilizando tecnologias web modernas.",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
     "build": "electron-packager . --icon=./256x256.png"
   },
-  "repository": "https://github.com/netools/helena_pos",
+  "build": {
+    "appId": "com.Electroplus.app",
+    "productName": "ElectronPlusApp",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "ipc.js",
+      "256x256.png",
+      "256x256.ico",
+      "preload.js",
+      "node_modules/**/*",
+      "public/**/*",
+      "libs/**/*",
+      "style/**/*",
+      "src/**/*",
+      "images/**/*"
+    ],
+    "mac": {
+      "target": "dmg"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "linux": {
+      "target": "AppImage"
+    }
+  },
+  "repository": "https://github.com/SADIAIOT/Electron-plus",
   "keywords": [
-    "helena pos",
-    "helena",
-    "helen",
-    "helena pdv",
-    "helena angola",
-    "helena ao"
+    "Electron",
+    "Electron-plus"
   ],
   "author": "Walter Alexandre Santana",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^26.0.0",
-    "electron-builder": "^22.10.5",
+    "electron": "^26.6.10",
+    "electron-builder": "^22.14.13",
     "electron-packager": "^17.1.2"
   },
   "dependencies": {
