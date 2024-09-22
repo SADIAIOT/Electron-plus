@@ -1,11 +1,11 @@
 {
-  "name": "Electron-plus",
+  "name": "electron-plus",
   "version": "1.0.0",
   "description": "Electron Plus é um framework inovador que visa facilitar o desenvolvimento de aplicativos desktop utilizando tecnologias web modernas.",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "build": "electron-packager . --icon=./256x256.png"
+    "build": "electron-builder build"
   },
   "build": {
     "appId": "com.Electroplus.app",
@@ -45,11 +45,12 @@
   "license": "MIT",
   "devDependencies": {
     "electron": "^26.6.10",
-    "electron-builder": "^22.14.13",
+    "electron-builder": "^25.0.5",
     "electron-packager": "^17.1.2"
   },
   "dependencies": {
     "electron-pos-printer": "^1.3.7",
+    "mathjs": "^13.1.1",
     "node-thermal-printer": "^4.4.2",
     "sqlite3": "^5.1.6"
   }

@@ -31,5 +31,5 @@ jspm_packages/
 Thumbs.db
 
 # Compiled binary addons (e.g. node-sass)
-build/ 
+build/
 
