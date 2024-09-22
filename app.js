@@ -4,34 +4,42 @@ const math = require("mathjs");
 const App = () => {
   const [data, setData] = React.useState(0);
   const [value, setValue] = React.useState("");
-  const [info, setInfo] = React.useState("Electron ++");
+  const [info, setInfo] = React.useState("Electron++");
+  const [alert, setAlert] = React.useState("");
 
   const handleClick = () => {
     if (!/^[0-9+\-*/().]+$/.test(value)) {
-      setInfo("Expressão inválida");
+      setAlert("alert_error");
       return;
     }
 
     try {
       const result = math.evaluate(value);
       setData(result);
-      setInfo("Electron Plus++");
+      setAlert("");
       ipcRenderer.send("button-click", result);
     } catch (error) {
-      setInfo("Erro na expressão");
+      setAlert("alert_error");
     }
   };
 
   return (
-    <div>
-      {info && <h2>{info}</h2>}
-      <input
-        placeholder="Digite a operação"
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
-      />
-      <h1>{data}</h1>
-      <button onClick={handleClick}>Calcular</button>
+    <div className="container_div">
+      <h2 className="title">{info}</h2>
+      <div className="card_input">
+        <input
+          className={`input ${alert}`}
+          placeholder="Digite a operação"
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+        />
+      </div>
+      <h1 className="subtitle">{data}</h1>
+      <footer className="card_input">
+        <button className="button" onClick={handleClick}>
+          Calcular
+        </button>
+      </footer>
     </div>
   );
 };

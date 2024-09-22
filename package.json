@@ -1,11 +1,12 @@
 {
-  "name": "electron-plus",
+  "name": "electron-plus-plus",
   "version": "1.0.0",
   "description": "Electron Plus é um framework inovador que visa facilitar o desenvolvimento de aplicativos desktop utilizando tecnologias web modernas.",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "build": "electron-builder build"
+    "build": "electron-builder build",
+    "install:tailwind": "node libs/install-tailwind.js"
   },
   "build": {
     "appId": "com.Electroplus.app",
@@ -44,9 +45,12 @@
   "author": "Walter Alexandre Santana",
   "license": "MIT",
   "devDependencies": {
+    "autoprefixer": "^10.4.20",
     "electron": "^26.6.10",
     "electron-builder": "^25.0.5",
-    "electron-packager": "^17.1.2"
+    "electron-packager": "^17.1.2",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.12"
   },
   "dependencies": {
     "electron-pos-printer": "^1.3.7",
