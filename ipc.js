@@ -6,7 +6,7 @@ function init() {
     // Lógica para manipular o clique do botão
     console.log('Botão clicado:', arg);
   });
-  
+
 }
 
 module.exports = { init };

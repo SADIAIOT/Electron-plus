@@ -18,11 +18,11 @@ function FormMain() {
       // zoomFactor: 0.68
     },
     autoHideMenuBar: true,
-    icon: path.join(__dirname, '256x256.png'),
+    icon: path.join(__dirname, '/public/icons/electron.png'),
   })
 
-  mainWindow.loadFile('public/index.html');
-  
+  mainWindow.loadFile('index.html');
+
   mainWindow.on('closed', function () {
     mainWindow = null;
     if (process.platform !== 'darwin') app.quit()
