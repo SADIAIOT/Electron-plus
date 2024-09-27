@@ -15,12 +15,14 @@ const App = () => {
   }
 
   return (
-    <View style={{ padding: 20 }}>
+    <View style={{ padding: 20 }} animate="backInLeft">
 
       <Button
-        title="home"
-        icon= "bx bx-home"
-        onClick={() => setRoute('home')}/>
+          title="home"
+          icon="bx bx-home"
+          onClick={() => setRoute('home')}
+      />
+
 
       <Button
         title="about"

@@ -29,10 +29,10 @@ const Text = ({ children, onHover, onDoubleClick, className, style }) => {
     );
 };
 
-const View = ({ children, onHover, onDoubleClick, className, style }) => {
+const View = ({ children, onHover, onDoubleClick, className, style, animate }) => {
     return (
         <div
-            className={className}
+            className={`${className} animate__animated ${animate ? `animate__${animate}` : ''}`} // Adicionando o prefixo animate__ corretamente
             style={style}
             onMouseOver={onHover}
             onDoubleClick={onDoubleClick}
@@ -42,14 +42,14 @@ const View = ({ children, onHover, onDoubleClick, className, style }) => {
     );
 };
 
-const Image = ({ src, alt, width, height, onHover, onDoubleClick, className, style }) => {
+const Image = ({ src, alt, width, height, onHover, onDoubleClick, className, style, animate }) => {
     return (
         <img
             src={"../../static/" + src}
             alt={alt}
             width={width}
             height={height}
-            className={className}
+            className={`${className} animate__animated ${animate ? `animate__${animate}` : ''}`} // Adicionando o prefixo animate__ corretamente
             style={style}
             onMouseOver={onHover}
             onDoubleClick={onDoubleClick}
@@ -57,22 +57,23 @@ const Image = ({ src, alt, width, height, onHover, onDoubleClick, className, sty
     );
 };
 
-const Button = ({ title, onClick, onDoubleClick, onHover, className, style, icon }) => {
+const Button = ({ title, onClick, onDoubleClick, onHover, className, style, icon, animate }) => {
     return (
         <button
             onClick={onClick}
             onDoubleClick={onDoubleClick}
             onMouseOver={onHover}
-            className={className}
+            className={`${className} animate__animated ${animate ? `animate__${animate}` : ''}`} // Adicionando o prefixo animate__ corretamente
             style={style}
         >
-            {icon && <i className={"icon " + icon}></i>}
-            <spa className="title">{title}</spa>
+            {icon && <i className={`icon ${icon}`}></i>}
+            <span className="title">{title}</span> {/* Correção de spa para span */}
         </button>
     );
 };
 
-const QRCodeGenerator = ({ text, className, style }) => {
+
+const QRCodeGenerator = ({ text, className, style, animate}) => {
     useEffect(() => {
         // Limpar QRCode anterior
         document.getElementById('qrcode').innerHTML = '';
@@ -88,7 +89,9 @@ const QRCodeGenerator = ({ text, className, style }) => {
     }, [text]);
 
     return (
-        <div id="qrcode" className={className} style={style}></div>
+        <div id="qrcode"
+            className={`${className} animate__animated ${animate ? `animate__${animate}` : ''}`} // Adicionando o prefixo animate__ corretamente
+            style={style}></div>
     );
 };
 
@@ -156,7 +159,7 @@ const MarkdownRenderer = ({ children }) => {
     return <div dangerouslySetInnerHTML={{ __html: htmlContent }} />;
 };
 
-const BarcodeGenerator = ({ value, format, className, style }) => {
+const BarcodeGenerator = ({ value, format, className, style, animate }) => {
     useEffect(() => {
         // Limpa o código de barras anterior
         document.getElementById('barcode').innerHTML = '';
@@ -172,6 +175,8 @@ const BarcodeGenerator = ({ value, format, className, style }) => {
     }, [value, format]);
 
     return (
-        <svg id="barcode" className={className} style={style}></svg>
+        <svg id="barcode"
+            className={`${className} animate__animated ${animate ? `animate__${animate}` : ''}`} // Adicionando o prefixo animate__ corretamente
+            style={style}></svg>
     );
 };
