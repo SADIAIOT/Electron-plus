@@ -18,10 +18,10 @@ function FormMain() {
       // zoomFactor: 0.68
     },
     autoHideMenuBar: true,
-    icon: path.join(__dirname, '/public/icons/electron.png'),
+    icon: path.join(__dirname, '/static/icons/electron.png'),
   })
 
-  mainWindow.loadFile('index.html');
+  mainWindow.loadFile('./public/template/index.html');
 
   mainWindow.on('closed', function () {
     mainWindow = null;
