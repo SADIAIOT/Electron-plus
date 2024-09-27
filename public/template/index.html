@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Define a codificação de caracteres como UTF-8 -->
+  <meta charset="UTF-8" />
+  <title>Electron ++</title> <!-- Título da página -->
+
+  <!-- Link para o arquivo CSS principal do aplicativo -->
+  <link rel="stylesheet" href="./app.css" />
+
+  <!-- Links para estilos CSS adicionais -->
+  <link rel="stylesheet" href="../../libs/bootstrap/bootstrap.css" /> <!-- Bootstrap CSS para estilização -->
+  <link rel="stylesheet" href="../../libs/electron/electron.css"> <!-- Estilos específicos do Electron -->
+  <link rel="stylesheet" href="../../libs/boxicons/css/boxicons.css" /> <!-- Ícones do Boxicons -->
+  <link rel="stylesheet" href="../../libs/cnd/animate.min.css" /> <!-- Ícones do Boxicons -->
+
+  <!-- Ícone da aba do navegador -->
+  <link rel="shortcut icon" href="../../public/static/electron.ico" type="image/x-icon" />
+
+  <!-- Inclusão de bibliotecas JavaScript -->
+  <script type="text/javascript" src="../../libs/qrcode/qrcode.min.js"></script> <!-- Biblioteca para geração de QR Codes -->
+  <script type="text/javascript" src="../../libs/cnd/marked.min.js"></script> <!-- Biblioteca para converter Markdown em HTML -->
+  <script type="text/javascript" src="./libs/vanilla-tilt.js"></script> <!-- Biblioteca para efeitos de inclinação em elementos -->
+  <script type="text/javascript" src="../../libs/cnd/JsBarcode.all.min.js"></script> <!-- Biblioteca para gerar códigos de barras -->
+
+  <!-- Inclusão das bibliotecas React e ReactDOM -->
+  <script type="text/javascript" src="../../libs/reactDOM/babel.min.js"></script> <!-- Babel para transpilar JSX -->
+  <script type="text/javascript" src="../../libs/reactDOM/react.production.min.js"></script> <!-- React em produção -->
+  <script type="text/javascript" src="../../libs/reactDOM/react-dom.production.min.js"></script> <!-- ReactDOM em produção -->
+
+  <!-- Inclusão de scripts específicos do Electron -->
+  <script type="text/babel" src="../../libs/electron/electron-plaus.js"></script> <!-- Script de funcionalidade do Electron -->
+  <script type="text/babel" src="../../libs/electron/electron-elements.js"></script> <!-- Componentes do Electron -->
+
+
+  <!-- Inclusão de scripts JSX específicos da aplicação -->
+  <script type="text/babel" src="../../src/home.js"></script> <!-- Script com informações da aplicação -->
+  <script type="text/babel" src="../../src/about.js"></script> <!-- Script com informações da aplicação -->
+  
+  
+</head>
+
+<body>
+  <!-- Elemento onde o aplicativo React será renderizado -->
+  <div id="root"></div>
+
+  <!-- Inclusão do script principal da aplicação -->
+  <script type="text/babel" src="../../src/app.js"></script> <!-- Script principal do aplicativo -->
+</body>
+
+</html>
