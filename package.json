@@ -17,15 +17,13 @@
     "files": [
       "main.js",
       "ipc.js",
+      "preload.js",
       "256x256.png",
       "256x256.ico",
-      "preload.js",
       "node_modules/**/*",
       "public/**/*",
-      "libs/**/*",
-      "style/**/*",
       "src/**/*",
-      "images/**/*"
+      "static/**/*"
     ],
     "mac": {
       "target": "dmg"

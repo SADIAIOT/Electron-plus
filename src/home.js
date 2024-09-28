@@ -9,11 +9,10 @@ const Home = () => {
   ];
 
   return (
-    <View style={{ justifyContent: 'center', alignItems: 'center' }}>
-      <h1>Hello do Eltron plus</h1>
-      <Text>Clique com o botão direito do mouse para abrir o menu.</Text>
+    <View className="flex flex-col text-center h-screen justify-center">
+      <h1 className="text-3xl text-blue-500">Hello do Eltron plus</h1> 
+      <Text className="text-green-500">Clique com o botão direito do mouse para abrir o menu.</Text>
       <CustomMenu options={options} style={{border : '1px solid #dd'}}/>
     </View>
   )
-
 };
