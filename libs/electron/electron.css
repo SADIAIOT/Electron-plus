@@ -1,3 +1,7 @@
+*{
+    margin: 0;
+    padding: 0;
+}
 #custom-menu {
     position: fixed;
     background-color: #fff;
@@ -52,4 +56,28 @@ porem o css completo um attributos de custumizacao no compomente #custom-menu {
 
 .hidden {
     display: none;
+}
+
+
+.eletronText{
+    border: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #05a57d;
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 5px 10px 5px 10px;
+}
+
+.eletronText:hover{
+    background-color: #057257;
+}
+
+.eletronText:active{
+    transform: translateX(5px);
+}
+
+.eletronText i{
+    margin-right: 6px;
 }

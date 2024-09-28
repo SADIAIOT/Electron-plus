@@ -1,6 +1,6 @@
-const { useState, useEffect, useRef } = React
+const { useState, useEffect} = React;
 
-const Input = ({ placeholder, onChange, onHover, onFocus, onBlur, onDoubleClick, className, style }) => {
+const Input = ({ placeholder, onChange, onHover, onFocus, onBlur, onDoubleClick, className, style, animate }) => {
     return (
         <input
             type="text"
@@ -10,16 +10,16 @@ const Input = ({ placeholder, onChange, onHover, onFocus, onBlur, onDoubleClick,
             onDoubleClick={onDoubleClick}
             onFocus={onFocus}
             onBlur={onBlur}
-            className={className}
+            className={`${className} animate__animated ${animate ? `animate__${animate}` : ''}`} // Adicionando o prefixo animate__ corretamente
             style={style}
         />
     );
 };
 
-const Text = ({ children, onHover, onDoubleClick, className, style }) => {
+const Text = ({ children, onHover, onDoubleClick, className, style, animate }) => {
     return (
         <p
-            className={className}
+            className={`${className} animate__animated ${animate ? `animate__${animate}` : ''}`} // Adicionando o prefixo animate__ corretamente
             style={style}
             onMouseOver={onHover}
             onDoubleClick={onDoubleClick}
@@ -63,7 +63,7 @@ const Button = ({ title, onClick, onDoubleClick, onHover, className, style, icon
             onClick={onClick}
             onDoubleClick={onDoubleClick}
             onMouseOver={onHover}
-            className={`${className} animate__animated ${animate ? `animate__${animate}` : ''}`} // Adicionando o prefixo animate__ corretamente
+            className={`${className} eletronText animate__animated ${animate ? `animate__${animate}` : ''}`} // Adicionando o prefixo animate__ corretamente
             style={style}
         >
             {icon && <i className={`icon ${icon}`}></i>}
