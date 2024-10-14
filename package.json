@@ -1,59 +1,16 @@
 {
-  "name": "electron-plus-plus",
+  "name": "meu-projeto-electron",
   "version": "1.0.0",
-  "description": "Electron Plus é um framework inovador que visa facilitar o desenvolvimento de aplicativos desktop utilizando tecnologias web modernas.",
+  "description": "",
   "main": "main.js",
   "scripts": {
-    "start": "electron .",
-    "build": "electron-builder build",
-    "install:tailwind": "node libs/install-tailwind.js"
+    "start": "webpack --mode development && electron .",
+    "build": "webpack --mode production"
   },
-  "build": {
-    "appId": "com.Electroplus.app",
-    "productName": "ElectronPlusApp",
-    "directories": {
-      "output": "dist"
-    },
-    "files": [
-      "main.js",
-      "ipc.js",
-      "preload.js",
-      "256x256.png",
-      "256x256.ico",
-      "node_modules/**/*",
-      "public/**/*",
-      "src/**/*",
-      "static/**/*"
-    ],
-    "mac": {
-      "target": "dmg"
-    },
-    "win": {
-      "target": "nsis"
-    },
-    "linux": {
-      "target": "AppImage"
-    }
-  },
-  "repository": "https://github.com/SADIAIOT/Electron-plus",
-  "keywords": [
-    "Electron",
-    "Electron-plus"
-  ],
-  "author": "Walter Alexandre Santana",
-  "license": "MIT",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
-    "autoprefixer": "^10.4.20",
-    "electron": "^26.6.10",
-    "electron-builder": "^25.0.5",
-    "electron-packager": "^17.1.2",
-    "postcss": "^8.4.47",
-    "tailwindcss": "^3.4.12"
-  },
-  "dependencies": {
-    "electron-pos-printer": "^1.3.7",
-    "mathjs": "^13.1.1",
-    "node-thermal-printer": "^4.4.2",
-    "sqlite3": "^5.1.6"
+    "electron": "^32.2.0"
   }
 }

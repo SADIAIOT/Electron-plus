@@ -1,46 +1,49 @@
-const { app, BrowserWindow} = require('electron')
-const apc = require('./ipc');
+const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
+const heart = require('./heart.js');
 
-apc.init();
+let win;
+let form;
 
-let mainWindow = null
-function FormMain() {
-  mainWindow = new BrowserWindow({
+heart.init();
+
+function createWindow() {
+  win = new BrowserWindow({
     width: 800,
-    height: 500,
+    height: 600,
     webPreferences: {
+      preload: path.join(__dirname, 'preload.js'),
       nodeIntegration: true,
       contextIsolation: false,
-      webSecurity: false,
-      devTools: true,
-      preload: path.join(__dirname, 'preload.js'),
-      // zoomFactor: 0.68
     },
-    autoHideMenuBar: true,
-    icon: path.join(__dirname, '/static/icons/electron.png'),
-  })
+  });
 
-  mainWindow.loadFile('./public/template/index.html');
+  win.loadFile('public/index.html'); // Janela principal
 
-  mainWindow.on('closed', function () {
-    mainWindow = null;
-    if (process.platform !== 'darwin') app.quit()
+  // Evento IPC para abrir o formulário em uma nova janela
+  ipcMain.on('openForm', () => {
+    form = new BrowserWindow({
+      width: 400,
+      height: 300,
+      webPreferences: {
+        preload: path.join(__dirname, 'preload.js'),
+        nodeIntegration: true,
+        contextIsolation: false,
+      },
+    });
+
+    form.loadFile('public/form.html'); // Carrega o arquivo HTML com React para o formulário
   });
 }
 
-
 app.whenReady().then(() => {
-  FormMain()
-  app.on('activate', function () {
-    if (BrowserWindow.getAllWindows().length === 0) FormLogin()
-  })
-})
+  createWindow();
 
+  app.on('activate', () => {
+    if (BrowserWindow.getAllWindows().length === 0) createWindow();
+  });
+});
 
-app.on('window-all-closed', function () {
-  if (process.platform !== 'darwin') app.quit()
-})
-
-app.on('before-quit', () => {});
-
+app.on('window-all-closed', () => {
+  if (process.platform !== 'darwin') app.quit();
+});
