@@ -5,12 +5,50 @@
   "main": "main.js",
   "scripts": {
     "start": "webpack --mode development && electron .",
-    "build": "webpack --mode production"
+    "build": "electron-builder"
   },
+  "build": {
+    "appId": "com.example.myapp",
+    "productName": "MyApp",
+    "asar": true,
+    "directories": {
+      "output": "builder"
+    },
+    "files": [
+      "dist/**/*",
+      "node_modules/**/*",
+      "main.js",
+      "heart.js",
+      "preload.js",
+      "package.json",
+      "icon.ico",
+      "webpack.config.js",
+      "public/**/*",
+      "babel.config.json"
+    ],
+    "win": {
+      "icon": "icon.ico",
+      "target": [
+        "nsis"
+      ]
+    },
+    "mac": {
+      "icon": "icon.icns",
+      "target": [
+        "dmg"
+      ]
+    },
+    "linux": {
+      "target": "AppImage",
+      "icon": "icon.ico"
+    }
+  },
+  "repository": "https://github.com/SADIAIOT/Electron-plus",
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Walter Alexandre Santana",
+  "license": "MIT",
   "devDependencies": {
-    "electron": "^32.2.0"
+    "electron": "^32.2.0",
+    "electron-builder": "^25.1.8"
   }
 }
